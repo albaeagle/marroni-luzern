@@ -1,1 +1,1 @@
-Marroni Luzern V4.4 – Fix der fehlerhaften HTML-Schliessmarke, Dialogdarstellung und der vierten unteren Klickfläche. Das freigegebene Marktstandbild bleibt unverändert. Lokal mit Live Server testen. Kein automatisches Deployment.
+Marroni Luzern V5.3 – Dach und Produktleiste bleiben stehen. Mittlerer Marktstand fährt hoch. Original-Logo als separate assets/logo.png austauschbar. Vor dem Live-Push lokal testen. Keine Änderungen an der produktiven Seite.
