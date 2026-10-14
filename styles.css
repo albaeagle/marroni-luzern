@@ -203,3 +203,36 @@
  .roof-separator{height:13px}
  .discover{display:block}
 }
+
+/* V5.4.8: On phones, the open content must use the viewport rather than
+   inheriting the letterboxed 3:2 dimensions of the market illustration. */
+@media (max-width:700px){
+  .scene .shutter{
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:60px;
+    left:0;
+    width:100vw;
+    height:calc(100svh - 60px);
+    z-index:12;
+    visibility:hidden;
+    overflow:hidden;
+  }
+  .scene .shutter.is-open{visibility:visible}
+  .scene .shutter-content{width:100%;height:100%;min-width:0;min-height:0}
+  .scene .shutter-scroll{min-width:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .scene #panel-content{max-width:100%;min-width:0}
+  .scene .shutter-header,.scene .shutter-footer{flex-shrink:0}
+}
+
+/* V5.4.9: Mobile stall 12% taller without losing either side.
+   Keep the overlay fixed to the viewport as in V5.4.8. */
+@media (max-width:700px){
+  .scene{
+    aspect-ratio:auto;
+    width:min(100vw, calc((100svh - 60px) * 1.3392857));
+    height:min(calc(100vw * .7466667), calc(100svh - 60px));
+    max-height:calc(100svh - 60px);
+  }
+}
