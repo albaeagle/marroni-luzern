@@ -189,3 +189,17 @@
 .location-contact span{color:#88613d;font-weight:700}
 .location-contact a{color:#48311e;text-decoration:none;border-bottom:1px solid #bba285;overflow-wrap:anywhere}
 .location-contact a:hover{color:#8c623a;border-color:currentColor}
+/* V5.4.7: show the complete 3:2 stall artwork on narrow screens. */
+@media(max-width:700px){
+ .site{min-height:100svh;height:100svh;padding:0 0 60px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+ .scene{width:min(100vw,calc((100svh - 60px)*1.5));height:auto;aspect-ratio:3/2;max-height:calc(100svh - 60px);flex:none;overflow:hidden}
+ .background{object-fit:fill;object-position:center}
+ .fixed-roof{background-size:100% 100%}
+ .mobile-bar{bottom:0;height:60px}
+ .roof-logo{top:1.1%;width:15.4%;max-width:none}
+ .roof-actions{top:4%;right:2%;gap:3px}
+ .roof-actions a,.roof-actions button{font-size:clamp(6px,1.5vw,10px)}
+ .roof-actions svg{width:clamp(11px,2.6vw,17px);height:clamp(11px,2.6vw,17px)}
+ .roof-separator{height:13px}
+ .discover{display:block}
+}
