@@ -1,0 +1,1 @@
+Marroni Luzern V4.4 – Fix der fehlerhaften HTML-Schliessmarke, Dialogdarstellung und der vierten unteren Klickfläche. Das freigegebene Marktstandbild bleibt unverändert. Lokal mit Live Server testen. Kein automatisches Deployment.
