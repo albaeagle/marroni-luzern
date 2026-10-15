@@ -236,3 +236,146 @@
     max-height:calc(100svh - 60px);
   }
 }
+
+/* V5.5.0: independently composed portrait experience. Desktop remains untouched. */
+.mobile-home{display:none}
+@media(max-width:700px){
+ :root{background:#101923}
+ .site{height:100svh;min-height:100svh;padding:0 0 60px;overflow:hidden}
+ .scene{position:absolute;inset:0;pointer-events:none;opacity:0;width:100vw;height:calc(100svh - 60px)}
+ .scene .shutter{pointer-events:none}
+ .scene .shutter.is-open{pointer-events:auto;opacity:1;z-index:30;visibility:visible}
+ .mobile-home{position:fixed;inset:0 0 60px;display:grid;grid-template-rows:minmax(120px,23%) minmax(175px,36%) minmax(0,1fr);z-index:10;overflow:hidden;background:#1a120d}
+ .mobile-awning{position:relative;min-height:0;background-image:url('assets/marktstand-clean.webp');background-size:210% auto;background-position:center top;background-repeat:no-repeat;background-color:#14263b;border-bottom:4px solid #b68049;box-shadow:0 5px 15px #0008;z-index:2}
+ .mobile-awning>img{position:absolute;top:9%;left:50%;transform:translateX(-50%);width:min(32vw,142px);max-height:83%;object-fit:contain;filter:drop-shadow(0 3px 6px #000b)}
+ .mobile-toplinks{position:absolute;top:12%;right:3%;display:flex;gap:8px;align-items:center}
+ .mobile-toplinks a,.mobile-toplinks button{font:600 10px system-ui,sans-serif;letter-spacing:.01em;color:#fff;text-shadow:0 1px 4px #000;background:#1d1a1699;border:1px solid #ffffff77;border-radius:20px;padding:6px;text-decoration:none;cursor:pointer}
+ .mobile-toplinks a{font-size:20px;line-height:1;padding:3px 7px}
+ .mobile-story{position:relative;min-height:0;display:grid;place-items:center;background:linear-gradient(#11182736,#0d131d42),url('assets/marktstand-clean.webp') center 57%/190% auto no-repeat,#233449}
+ .mobile-story-copy{text-align:center;padding:10px 12px;width:100%;text-shadow:0 2px 10px #000}
+ .mobile-story h1{font:normal clamp(28px,8vw,43px)/1.08 Georgia,serif;color:#fff9ef;margin:0 0 12px;white-space:nowrap;letter-spacing:-.04em}
+ .mobile-story p{font:500 clamp(9px,2.4vw,12px) system-ui,sans-serif;letter-spacing:.22em;color:#fff3df;margin:0 0 20px}
+ .mobile-story button{font:600 13px system-ui,sans-serif;color:#fff;border:1px solid #f6d9ac;border-radius:30px;background:#4b230dcc;padding:12px 28px;cursor:pointer}
+ .mobile-counter{min-height:0;display:flex;flex-direction:column;align-items:center;padding:9px 10px 11px;background:linear-gradient(#4b2b19,#20120c);border-top:5px solid #a9753f}
+ .mobile-counter>p{font:normal 15px Georgia,serif;color:#f4d5a8;margin:0 0 8px}
+ .mobile-specialties{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;width:100%;min-height:0;flex:1}
+ .mobile-specialties button{min-width:0;min-height:0;display:flex;flex-direction:column;gap:5px;align-items:center;justify-content:center;border:1px solid #bb8a574d;background:#24150f;color:#f9e8d0;padding:5px 3px;cursor:pointer;border-radius:6px}
+ .mobile-specialties img{display:block;width:100%;height:clamp(55px,11svh,110px);max-height:66%;object-fit:cover;border-radius:4px}
+ .mobile-specialties span{font:normal clamp(10px,2.8vw,13px)/1.15 Georgia,serif;text-align:center;overflow-wrap:normal}
+ .mobile-bar{z-index:40}
+ .scene .shutter{position:fixed;inset:0 0 60px!important;width:100vw;height:calc(100svh - 60px);z-index:30;opacity:0;visibility:hidden;overflow:hidden}
+ .scene .shutter.is-open{opacity:1;visibility:visible}
+ .scene .shutter-scroll{padding:14px 16px 24px}
+ .scene .shutter-content{height:100%;width:100%}
+ .scene .shutter-header{padding:10px 14px}
+ .scene .shutter-footer{padding:7px 14px}
+ .product-profile .product-visual img{max-height:19svh}
+}
+@media(max-width:700px) and (max-height:690px){
+ .mobile-home{grid-template-rows:22% 34% 44%}
+ .mobile-specialties img{height:clamp(45px,9svh,72px)}
+ .mobile-counter>p{margin-bottom:4px}
+}
+/* Keep the information panel above the portrait homepage without showing the old scene. */
+@media(max-width:700px){
+ .scene{opacity:1;z-index:20;background:transparent}
+ .scene>.market-stage,.scene>.fixed-roof,.scene>.roof-actions,.scene>.roof-logo,.scene>.products{display:none!important}
+ .scene .shutter{pointer-events:none}
+ .scene .shutter.is-open{pointer-events:auto}
+}
+
+/* V5.5.1: Mobile-only cleanup. One awning, one headline, compact product cards. */
+@media (max-width:700px){
+ .mobile-home{grid-template-rows: minmax(120px,23%) minmax(185px,37%) minmax(0,40%)}
+ .mobile-story{
+  background-image:linear-gradient(180deg,rgba(12,20,30,.52),rgba(18,21,25,.68)),url('assets/stand-echt.jpg');
+  background-position:center,center 48%;background-size:cover,cover;background-repeat:no-repeat;
+ }
+ .mobile-story-copy{position:relative;z-index:1}
+ .mobile-counter{justify-content:flex-start;overflow:hidden;padding:9px 10px 12px}
+ .mobile-specialties{flex:0 1 auto;align-items:start;grid-auto-rows:min-content;gap:7px}
+ .mobile-specialties button{justify-content:flex-start;min-height:0;height:auto;padding:5px 3px 9px;gap:6px}
+ .mobile-specialties img{width:100%;height:auto;aspect-ratio:1/1;max-height:none;object-fit:cover}
+ .mobile-specialties span{min-height:2.4em;display:flex;align-items:flex-start;justify-content:center}
+}
+@media(max-width:700px) and (max-height:690px){
+ .mobile-home{grid-template-rows:22% 35% 43%}
+ .mobile-specialties img{height:auto;aspect-ratio:1/1}
+}
+
+/* V5.5.2: a dedicated mobile composition using ONLY the original illustrated market stall. */
+@media (max-width:700px) {
+ .mobile-home{grid-template-rows:23% 39% 38%;background:#21150f}
+ .mobile-awning{background-image:url('assets/mobile-awning.webp');background-size:100% 100%;background-position:center;background-repeat:no-repeat;border-bottom:3px solid #8c5c30}
+ .mobile-story{background-image:linear-gradient(180deg,rgba(8,15,25,.23),rgba(8,13,20,.54)),url('assets/mobile-counter-scene.webp');background-size:cover,cover;background-position:center,center;background-repeat:no-repeat;border-bottom:3px solid #956332}
+ .mobile-story h1{font-size:clamp(26px,7.5vw,37px);white-space:normal}
+ .mobile-story p{margin-bottom:14px}
+ .mobile-counter{justify-content:center;gap:10px;padding:12px 10px 16px;overflow:hidden;background:linear-gradient(180deg,#4b2b19 0%,#291910 60%,#1d130e 100%);border-top:0}
+ .mobile-counter>p{margin:0;font-size:17px}
+ .mobile-specialties{flex:0 1 auto;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;grid-auto-rows:auto;gap:6px}
+ .mobile-specialties button{height:auto;min-height:135px;max-height:205px;justify-content:flex-start;gap:6px;padding:5px 3px 8px}
+ .mobile-specialties img{width:100%;height:clamp(76px,11svh,125px);aspect-ratio:1;max-height:none;object-fit:cover}
+ .mobile-specialties span{min-height:2.3em;font-size:clamp(10px,2.6vw,12px);align-items:center}
+ .scene{background:transparent}
+ .scene .shutter{position:fixed;inset:0 0 60px;z-index:60}
+ .mobile-bar{z-index:70}
+}
+@media(max-width:700px) and (max-height:690px){
+ .mobile-home{grid-template-rows:23% 38% 39%}
+ .mobile-specialties img{height:clamp(58px,10svh,85px)}
+ .mobile-specialties button{min-height:105px}
+}
+
+/* V5.5.3: Ausschnitte der vier originalen Standmotive als Vorschau */
+@media (max-width: 700px){.mobile-specialties img{object-fit:contain;background:#24150f;aspect-ratio:1.2/1;height:clamp(62px,10svh,92px);width:100%;max-height:none}.mobile-specialties button{min-height:120px}}
+
+/* V5.5.4 – only mobile: 2 × 2 specialty cards and original Instagram glyph */
+@media (max-width:700px){
+ .mobile-counter{justify-content:center;gap:9px;padding:12px 12px 14px}
+ .mobile-counter>p{font-size:17px;margin:0}
+ .mobile-specialties{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:9px;flex:0 1 auto;max-height:calc(100% - 29px);align-items:stretch}
+ .mobile-specialties button{height:100%;min-height:0;max-height:none;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 8px;gap:3px;border-radius:7px}
+ .mobile-specialties img{width:100%;height:clamp(54px,9svh,105px);max-height:calc(100% - 22px);aspect-ratio:1.8/1;object-fit:contain;background:transparent}
+ .mobile-specialties span{min-height:0;font-size:clamp(12px,3.3vw,15px);line-height:1.1;display:block;text-align:center}
+ .mobile-toplinks a{width:29px;height:29px;padding:5px;display:grid;place-items:center;border:0;background:transparent;border-radius:0;line-height:1}
+ .mobile-toplinks a svg{display:block;width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px #0009)}
+ .mobile-toplinks a svg .icon-dot{fill:#fff;stroke:none}
+}
+@media (max-width:700px) and (max-height:690px){
+ .mobile-counter{padding:7px 10px}
+ .mobile-specialties{gap:5px}
+ .mobile-specialties img{height:clamp(42px,8svh,72px)}
+}
+
+/* V5.5.5: desktop-only softer evening backdrop; mobile layout stays unchanged. */
+@media (min-width:701px){
+ html,body{background:radial-gradient(ellipse at 50% 48%,#8a7061 0%,#667184 47%,#435a6b 78%,#384b59 100%)}
+ .site{background:transparent}
+}
+/* Consistent typography, without changing the mobile card arrangement. */
+@media (max-width:700px){
+ .mobile-counter>p,.mobile-specialties span{font-family:Georgia,'Times New Roman',serif;font-weight:400}
+ .mobile-bar button,.mobile-toplinks button{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:500}
+}
+
+/* V5.5.6: desktop-only atmospheric continuation of the original stall image. */
+@media (min-width:701px) {
+  html, body { background:#273342; }
+  body::before {
+    content:"";
+    position:fixed;
+    inset:-42px;
+    z-index:-1;
+    pointer-events:none;
+    background-image:linear-gradient(90deg,rgba(18,27,40,.16),rgba(40,30,30,.08) 50%,rgba(18,27,40,.16)),url('assets/marktstand-clean.webp');
+    background-size:cover;
+    background-position:center center;
+    filter:blur(32px) brightness(.83) saturate(1.12);
+    transform:scale(1.04);
+  }
+  .site { position:relative; z-index:0; background:transparent; }
+}
+@media (min-width:701px) {
+  body::before { z-index:0; }
+  .site { z-index:1; }
+}

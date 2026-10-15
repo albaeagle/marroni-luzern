@@ -1,7 +1,5 @@
-Marroni Luzern V5.4.9
+Marroni Luzern V5.5.6 – Desktop-Hintergrund im Schimmer
 
-Mobile: Marktstand ca. 12 % hoeher als V5.4.8, volle Breite bleibt sichtbar.
-Produkt- und Standort-Panels nutzen weiterhin den Bildschirm (V5.4.8).
-Desktop unveraendert. Favicon bleibt die transparente Marroni.
+Aufbauend auf V5.5.5. Nur Desktop (>700px): Das originale Marktstandbild wird als weiche, verschwommene Fortsetzung hinter dem scharfen Hauptmotiv angezeigt. Die mobile Ansicht und alle Funktionen bleiben unverändert.
 
-Bitte lokal mit iPhone-Emulation pruefen und erst nach Freigabe deployen.
+Lokal prüfen, insbesondere Desktop-Breite und Mobile 390px, vor Live-Deployment.
